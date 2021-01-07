@@ -5,6 +5,7 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 import CMS from 'netlify-cms-app'
+import MyTemplate from './blogtemplate'
 // Initialize the CMS object
 CMS.init()
 // Now the registry is available via the CMS object.
