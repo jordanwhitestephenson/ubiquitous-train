@@ -4,10 +4,10 @@ import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 const NotFoundPage = () => (
-  <Layout>
-    <SEO title="404: Not found" />
-    <p>ADMIN</p>
-  </Layout>
+    <div>
+        <p>ADMIN</p>
+    </div>
+
 )
 
 export default NotFoundPage

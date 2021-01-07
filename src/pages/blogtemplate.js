@@ -1,14 +1,13 @@
 import React from "react"
 import { Link } from "gatsby"
 
-import Layout from "../components/Layout"
 import SEO from "../components/seo"
 
 const MyTemplate = () => (
-  <Layout>
+  <div>
     <SEO title="Page two" />
     <h1>*!)#*!)@#*)!@(#!)@#!@*#</h1>
-  </Layout>
+  </div>
 )
 
 export default MyTemplate
