@@ -4,11 +4,14 @@ import { BlogPostTemplate } from '../../templates/blog-post'
 
 const BlogPostPreview = ({ entry, widgetFor }) => {
   const tags = entry.getIn(['data', 'tags'])
+  console.log(entry, 'BlogPostPreview***!@#')
   return (
     <BlogPostTemplate
       content={widgetFor('body')}
-      description={entry.getIn(['data', 'description'])}
-      tags={tags && tags.toJS()}
+      title={entry.getIn(['data', 'title'])}
+      thumbnail={entry.getIn(['data', 'thumbnail'])}
+      body={entry.getIn(['data', 'body'])}
+      rating={entry.getIn(['data', 'rating'])}
       title={entry.getIn(['data', 'title'])}
     />
   )
