@@ -1,27 +1,73 @@
-import React from "react"
+import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-
-import Image from "../components/image"
+import Layout from '../components/Layout'
+import FadeIn from 'react-fade-in';
 import SEO from "../components/seo"
+import Navigation from '../components/nav'
 import CMS from 'netlify-cms-app'
 import BlogPostPreview from '../cms/preview-templates/BlogPostPreview'
+import { Router } from "@reach/router"
+import About from '../pages/about'
+import Home from '../pages/home'
+import Animation from '../components/animation'
+import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
+
+
 // Initialize the CMS object
-CMS.init()
-CMS.registerPreviewTemplate('blog', BlogPostPreview)
+// CMS.init()
+// CMS.registerPreviewTemplate('blog', BlogPostPreview)
 // Now the registry is available via the CMS object.
 // CMS.registerPreviewTemplate('my-template', MyTemplate)
-const IndexPage = () => (
-  <div>
-    <SEO title="Home" />
-    <h1>Hi people</h1>
-    <p>Welcome to your new Gatsby site.</p>
-    <p>Now go build something great.</p>
-    <div style={{ maxWidth: `300px`, marginBottom: `1.45rem` }}>
-      <Image />
-    </div>
-    <Link to="/page-2/">Go to page 2</Link> <br />
-    <Link to="/using-typescript/">Go to "Using TypeScript"</Link>
-  </div>
-)
+class IndexPage extends React.Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      spinner: true,
+    }
+  }
+
+  componentDidMount() {
+
+    setTimeout(() => {
+      this.setState({
+        spinner: false
+      })
+    }, 3000);
+
+    // Runs after the first render() lifecycle
+  }
+
+  render() {
+    const theme = createMuiTheme({
+      palette: {
+        primary: {
+          light: '#fff',
+          main: 'rgb(23, 105, 170)',
+          dark: '#000'
+        },
+        secondary: {
+          main: '#6f8a83',
+        },
+      },
+
+    });
+    return (
+
+      this.state.spinner ?
+        <FadeIn>
+          <Animation />
+        </FadeIn> :
+        <MuiThemeProvider theme={theme}>
+          <FadeIn transitionDuration="600">
+            <SEO title="Home" />
+            <Layout>
+              <Home />
+            </Layout>
+          </FadeIn>
+        </MuiThemeProvider>
+    )
+  }
+}
+
 
 export default IndexPage

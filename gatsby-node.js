@@ -33,11 +33,13 @@ exports.createPages = ({ actions, graphql }) => {
   `).then((result) => {
     if (result.errors) {
       result.errors.forEach((e) => console.error(e.toString()))
+      console.log(result, "ERRor")
       return Promise.reject(result.errors)
+
     }
 
     const posts = result.data.allMarkdownRemark.edges
-
+console.log(posts, "POSTS from create page")
     posts.forEach((edge) => {
       const id = edge.node.id
       createPage({

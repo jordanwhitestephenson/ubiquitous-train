@@ -1,16 +1,10 @@
-html {
-  -ms-text-size-adjust: 100%;
-  -webkit-text-size-adjust: 100%;
-  font: 112.5%/1.45em georgia, serif, sans-serif;
-  box-sizing: border-box;
-  overflow-y: scroll;
-}
+
 body {
   margin: 0;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  font-family: "IBM Plex Mono",monospace;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -52,6 +46,7 @@ template {
 }
 a {
   background-color: transparent;
+  color: #444;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
@@ -81,12 +76,16 @@ h1 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: 'Playfair Display';
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
   line-height: 1.1;
+  font-weight: 400;
+  margin-top: 20px;
+  font-size: calc(50px + 14 * ( (100vw - 576px) / 1024));
+    line-height: 1.05;
+    letter-spacing: -0.02em;
 }
 mark {
   background-color: #ff0;
@@ -118,7 +117,7 @@ img {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+  margin-bottom: 0;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -260,12 +259,15 @@ h2 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Playfair Display", serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
-  font-size: 1.62671rem;
-  line-height: 1.1;
+  font-size: 40px;
+  line-height: 1.25em;
+  font-weight: 400;
+  margin: 25px 0;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 h3 {
   margin-left: 0;
@@ -277,8 +279,7 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "IBM Plex Mono",monospace;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -294,12 +295,18 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-  font-weight: bold;
-  text-rendering: optimizeLegibility;
-  font-size: 1rem;
-  line-height: 1.1;
+
+  font-family: "Playfair Display",serif;
+  color: #0a1a2b;
+  font-family: "IBM Plex Mono",monospace;
+  font-size: 16px;
+  line-height: 1.375em;
+  font-weight: 600;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  margin: 25px 0;
+  -ms-word-wrap: break-word;
+  word-wrap: break-word;
 }
 h5 {
   margin-left: 0;
@@ -311,8 +318,7 @@ h5 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "IBM Plex Mono",monospace;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.85028rem;
@@ -328,8 +334,7 @@ h6 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "IBM Plex Mono",monospace;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 0.78405rem;
@@ -397,7 +402,14 @@ p {
   padding-left: 0;
   padding-right: 0;
   padding-top: 0;
-  margin-bottom: 1.45rem;
+
+    line-height: 30px;
+    letter-spacing: 0.5px;
+    font-family: "IBM Plex Mono",monospace;
+    font-size: 14px;
+    line-height: 1.765em;
+
+
 }
 pre {
   margin-left: 0;
@@ -490,6 +502,7 @@ th {
 }
 li {
   margin-bottom: calc(1.45rem / 2);
+  list-style: none;
 }
 ol li {
   padding-left: 0;
@@ -590,8 +603,4 @@ pre tt:before,
 pre tt:after {
   content: "";
 }
-@media only screen and (max-width: 480px) {
-  html {
-    font-size: 100%;
-  }
-}
+
