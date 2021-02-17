@@ -11,7 +11,7 @@ import About from '../pages/about'
 import Home from '../pages/home'
 import Animation from '../components/animation'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-
+import netlifyIdentity from 'netlify-identity-widget'
 
 // Initialize the CMS object
 // CMS.init()
@@ -27,6 +27,8 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
+    // console.log('YAAA?!')
+
 
     setTimeout(() => {
       this.setState({
@@ -38,6 +40,8 @@ class IndexPage extends React.Component {
   }
 
   render() {
+    netlifyIdentity.init()
+    netlifyIdentity.on('init', user => console.log('init', user));
     const theme = createMuiTheme({
       palette: {
         primary: {

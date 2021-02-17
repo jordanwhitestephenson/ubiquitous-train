@@ -12,7 +12,8 @@ const { fmImagesToRelative } = require('gatsby-remark-relative-images')
 
 exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
-
+  
+  const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return graphql(`
     {
       allMarkdownRemark(limit: 1000) {

@@ -15,8 +15,9 @@ import Button from '@material-ui/core/Button';
 import Jordan from '../images/Jordan50111.png'
 import Nav from "./nav"
 
-import "./layout.css"
 
+import "./layout.css"
+// class IndexPage extends React.Component {
 const Layout = (props) => {
   const data = useStaticQuery(graphql`
     query SiteTitleQuery {
