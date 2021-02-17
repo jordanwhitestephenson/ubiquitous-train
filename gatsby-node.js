@@ -14,49 +14,52 @@ exports.createPages = ({ actions, graphql }) => {
   const { createPage } = actions
   
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
-  return graphql(`
-    {
-      allMarkdownRemark(limit: 1000) {
-        edges {
-          node {
-            id
-            fields {
-              slug
-            }
-            frontmatter {
+  return (
+    <h1>ta</h1>
+  )
+  // return graphql(`
+  //   {
+  //     allMarkdownRemark(limit: 1000) {
+  //       edges {
+  //         node {
+  //           id
+  //           fields {
+  //             slug
+  //           }
+  //           frontmatter {
 
-              templateKey
-            }
-          }
-        }
-      }
-    }
-  `).then((result) => {
-    if (result.errors) {
-      result.errors.forEach((e) => console.error(e.toString()))
-      console.log(result, "ERRor")
-      return Promise.reject(result.errors)
+  //             templateKey
+  //           }
+  //         }
+  //       }
+  //     }
+  //   }
+  // `).then((result) => {
+  //   if (result.errors) {
+  //     result.errors.forEach((e) => console.error(e.toString()))
+  //     console.log(result, "ERRor")
+  //     return Promise.reject(result.errors)
 
-    }
+  //   }
 
-    const posts = result.data.allMarkdownRemark.edges
-console.log(posts, "POSTS from create page")
-    posts.forEach((edge) => {
-      const id = edge.node.id
-      createPage({
-        path: `/blogtemplate`,
-        component: path.resolve(
-          `./src/pages/blogtemplate.js`
-        ),
-        // additional data can be passed via context
-        context: `123`,
-      })
-    })
+//     const posts = result.data.allMarkdownRemark.edges
+// console.log(posts, "POSTS from create page")
+//     posts.forEach((edge) => {
+//       const id = edge.node.id
+//       createPage({
+//         path: `/blogtemplate`,
+//         component: path.resolve(
+//           `./src/pages/blogtemplate.js`
+//         ),
+//         // additional data can be passed via context
+//         context: `123`,
+//       })
+//     })
 
     // Eliminate duplicate tags
 
 
-  })
+  // })
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
