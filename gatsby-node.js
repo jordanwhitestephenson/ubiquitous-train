@@ -15,7 +15,7 @@ exports.createPages = ({ actions, graphql }) => {
   
   const blogPost = path.resolve(`./src/templates/blog-post.js`)
   return (
-    <h1>ta</h1>
+  
   )
   // return graphql(`
   //   {
