@@ -6,14 +6,15 @@ const BlogPostPreview = ({ entry, widgetFor }) => {
   const tags = entry.getIn(['data', 'tags'])
   console.log(entry, 'BlogPostPreview***!@#')
   return (
-    <BlogPostTemplate
-      content={widgetFor('body')}
-      title={entry.getIn(['data', 'title'])}
-      thumbnail={entry.getIn(['data', 'thumbnail'])}
-      body={entry.getIn(['data', 'body'])}
-      rating={entry.getIn(['data', 'rating'])}
-      title={entry.getIn(['data', 'title'])}
-    />
+    // <BlogPostTemplate
+    <h2>y</h2>
+    //   content={widgetFor('body')}
+    //   title={entry.getIn(['data', 'title'])}
+    //   thumbnail={entry.getIn(['data', 'thumbnail'])}
+    //   body={entry.getIn(['data', 'body'])}
+    //   rating={entry.getIn(['data', 'rating'])}
+    //   title={entry.getIn(['data', 'title'])}
+    // />
   )
 }
 
