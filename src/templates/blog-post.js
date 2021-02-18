@@ -1,99 +1,90 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { kebabCase } from 'lodash'
-import { Helmet } from 'react-helmet'
-import { graphql, Link } from 'gatsby'
+import React from "react"
+import { Link, graphql } from "gatsby"
+import { MDXRenderer } from "gatsby-plugin-mdx"
 
-import Content, { HTMLContent } from '../components/Content'
+import Bio from "../components/bio"
+import Layout from "../components/layout"
+import SEO from "../components/seo"
+import { rhythm, scale } from "../utils/typography"
 
-export const BlogPostTemplate = (data) => {
+class BlogPostTemplate extends React.Component {
+  render() {
+    const post = this.props.data.mdx
+    const siteTitle = this.props.data.site.siteMetadata.title
+    const { previous, next } = this.props.pageContext
 
-console.log(  data, 'blog-post')
-  return (
-    //   <div>
-    //       <h2>YA</h2>
-    //   </div>
-    <section className="section">
-      BLOGPOST
-      {/* {helmet || ''}
-      <div className="container content">
-        <div className="columns">
-          <div className="column is-10 is-offset-1">
-            <h1 className="title is-size-2 has-text-weight-bold is-bold-light">
-              {title}
-            </h1>
-            <p>{description}</p>
-            <PostContent content={content} />
-            {tags && tags.length ? (
-              <div style={{ marginTop: `4rem` }}>
-                <h4>Tags</h4>
-                <ul className="taglist">
-                  {tags.map((tag) => (
-                    <li key={tag + `tag`}>
-                      <Link to={`/tags/${kebabCase(tag)}/`}>{tag}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            ) : null}
-          </div>
-        </div>
-      </div> */}
-    </section>
-  )
+    return (
+      <Layout location={this.props.location} title={siteTitle}>
+        <SEO
+          title={post.frontmatter.title}
+          description={post.frontmatter.description || post.excerpt}
+        />
+        <h1>{post.frontmatter.title}</h1>
+        <p
+          style={{
+            ...scale(-1 / 5),
+            display: `block`,
+            marginBottom: rhythm(1),
+            marginTop: rhythm(-1),
+          }}
+        >
+          {post.frontmatter.date}
+        </p>
+        <MDXRenderer>{post.body}</MDXRenderer>
+        <hr
+          style={{
+            marginBottom: rhythm(1),
+          }}
+        />
+        <Bio />
+
+        <ul
+          style={{
+            display: `flex`,
+            flexWrap: `wrap`,
+            justifyContent: `space-between`,
+            listStyle: `none`,
+            padding: 0,
+          }}
+        >
+          <li>
+            {previous && (
+              <Link to={`/blog${previous.fields.slug}`} rel="prev">
+                ← {previous.frontmatter.title}
+              </Link>
+            )}
+          </li>
+          <li>
+            {next && (
+              <Link to={`/blog${next.fields.slug}`} rel="next">
+                {next.frontmatter.title} →
+              </Link>
+            )}
+          </li>
+        </ul>
+      </Layout>
+    )
+  }
 }
 
-BlogPostTemplate.propTypes = {
-  content: PropTypes.node.isRequired,
-  description: PropTypes.string,
-  title: PropTypes.string,
-  helmet: PropTypes.object,
-}
-
-const BlogPost = ({ data }) => {
-    console.log(data, '12')
-//   const { markdownRemark: post } = data
-
-  return (
-    <div>
-      <BlogPostTemplate
-        // content={post.html}
-        // contentComponent={HTMLContent}
-        // description={post.frontmatter.description}
-        // helmet={
-        //   <Helmet titleTemplate="%s | Blog">
-        //     <title>{`${post.frontmatter.title}`}</title>
-        //     <meta
-        //       name="description"
-        //       content={`${post.frontmatter.description}`}
-        //     />
-        //   </Helmet>
-        // }
-        // tags={post.frontmatter.tags}
-        // title={post.frontmatter.title}
-      />
-    </div>
-  )
-}
-
-// BlogPost.propTypes = {
-//   data: PropTypes.shape({
-//     markdownRemark: PropTypes.object,
-//   }),
-// }
-
-export default BlogPost
+export default BlogPostTemplate
 
 // export const pageQuery = graphql`
-//   query BlogPostByID($id: String!) {
-//     markdownRemark(id: { eq: $id }) {
-//       id
-//       html
-//       frontmatter {
-//         date(formatString: "MMMM DD, YYYY")
+//   query BlogPostBySlug($slug: String!) {
+//     site {
+//       siteMetadata {
 //         title
+//         author
+//       }
+//     }
+//     mdx(fields: { slug: { eq: $slug } }) {
+//       id
+//       excerpt(pruneLength: 160)
+//       body
+//       frontmatter {
+//         title
+//         date(formatString: "MMMM DD, YYYY")
 //         description
-//         tags
 //       }
 //     }
 //   }

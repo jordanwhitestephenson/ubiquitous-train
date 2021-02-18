@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react"
 import { Link } from "gatsby"
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import FadeIn from 'react-fade-in';
 import SEO from "../components/seo"
 import Navigation from '../components/nav'

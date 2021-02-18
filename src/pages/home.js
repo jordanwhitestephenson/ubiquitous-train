@@ -1,6 +1,6 @@
 import * as React from "react";
 import { useDencrypt } from "use-dencrypt-effect";
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 const values = ["useDencrypt", "Customizable", "React Hook", "Text Effect"];
 const HomePage = () => {
     const { result, dencrypt } = useDencrypt();
