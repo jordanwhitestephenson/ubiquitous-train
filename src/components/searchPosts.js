@@ -105,7 +105,7 @@ const AllPosts = ({ posts }) => (
 const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
-console.log(localSearchBlog)
+console.log(localSearchBlog, '?!@#!@#')
   const results = useFlexSearch(
     query,
     localSearchBlog.index,

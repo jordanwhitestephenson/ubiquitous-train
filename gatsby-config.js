@@ -21,7 +21,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-netlify-cms`,
-    `gatsby-plugin-root-import`,
+    
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
