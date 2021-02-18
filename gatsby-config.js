@@ -57,7 +57,7 @@ module.exports = {
           }
         `,
         ref: "id",
-        index: ["title"],
+        index: ["title", "rawBody"],
         store: ["id", "slug", "date", "title","description"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({

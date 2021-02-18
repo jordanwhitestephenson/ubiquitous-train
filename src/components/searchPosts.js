@@ -56,7 +56,7 @@ const SearchedPosts = ({ results }) =>
               marginBottom: rhythm(1 / 4),
             }}
           >
-            <Link style={{ boxShadow: `none` }} to={`/blog${slug}`}>
+            <Link className = "blog-post-ahref" style={{ boxShadow: `none`, color: `#444 !important` }} to={`/blog${slug}`}>
               {title}
             </Link>
           </h3>
@@ -105,16 +105,16 @@ const AllPosts = ({ posts }) => (
 const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
-console.log(localSearchBlog, '?!@#!@#')
-  const results = useFlexSearch(
-    query,
-    localSearchBlog.index,
-    JSON.parse(localSearchBlog.store)
-  )
+  // console.log(query, localSearchBlog.index, 'INDEX', localSearchBlog.store, 'STORE')
+  // const results = useFlexSearch(
+  //   query,
+  //   localSearchBlog.index,
+  //   JSON.parse(localSearchBlog.store)
+  // )
 
   return (
     <>
-      <SearchBar>
+      {/* <SearchBar>
         <svg
           focusable="false"
           xmlns="http://www.w3.org/2000/svg"
@@ -134,8 +134,8 @@ console.log(localSearchBlog, '?!@#!@#')
             setQuery(e.target.value)
           }}
         />
-      </SearchBar>
-      {query ? <SearchedPosts results={results} /> : <AllPosts posts={posts} />}
+      </SearchBar> */}
+     <AllPosts posts={posts} />
     </>
   )
 }

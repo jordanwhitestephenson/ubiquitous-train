@@ -49,6 +49,9 @@ a {
   color: #444;
   -webkit-text-decoration-skip: objects;
 }
+.blog-post-ahref {
+  color: #444 !important;
+}
 a:active,
 a:hover {
   outline-width: 0;

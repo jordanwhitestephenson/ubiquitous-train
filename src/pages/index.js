@@ -64,7 +64,7 @@ console.log(this.props, 'INDEX')
           <FadeIn transitionDuration="600">
             <SEO title="Home" />
             <Layout location = {this.props.location} title = {"Jordan Stephenson Consumer Designer"}>
-              <Home />
+              {/* <Home /> */}
             </Layout>
           </FadeIn>
         </MuiThemeProvider>

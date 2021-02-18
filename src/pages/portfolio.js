@@ -2,27 +2,23 @@ import React, { useState } from "react"
 import Layout from '../components/Layout'
 import Jordan from '../images/Jordan.png'
 import Grid from '@material-ui/core/Grid';
-import Container from '@material-ui/core/Container';
-import MyModal from '../components/modal'
+import SEO from "../components/seo"
+import { Link, graphql } from "gatsby"
 import Button from '@material-ui/core/Button';
 import GiroSport from '../images/GiroMockupMobile.png'
 import Nolly from '../images/2.png'
 import BarnStay from '../images/1.png'
 import snake from '../images/snake.png'
 
-const PortfolioPage = () => {
+const PortfolioPage = (props) => {
   const [open, setOpen] = useState(false);
 
-  const onOpenModal = (type) => {
-    setOpen(type);
-  }
-  const onCloseModal = () => {
-    setOpen(false);
 
-  }
+
 
   return (
-    <Layout>
+    <Layout location={props.location} title={'Portfolio'}>
+      <SEO title="Jordan Portfolio" />
       <div class="content-center" style={{ flexDirection: "column" }}>
         <Grid container style={{ height: "100%" }} container className=" padding-top-bottom-container max-width-container">
           <Grid item xs={12} md={6}>
@@ -89,24 +85,9 @@ const PortfolioPage = () => {
           </Grid>
 
         </div>
-
-
-
-
-
-
-
-        {/* <button onClick={() => onOpenModal(1)}>Open modal 1</button>
-            <button onClick={() => onOpenModal(2)}>Open modal 2</button>
-              <MyModal headline="Giro" modalState = {open === 1}  onClose = {onCloseModal} />
-              <MyModal headline="SECON"  modalState = {open === 2}   onClose = {onCloseModal}/> */}
-
-
-
-
-
       </div>
     </Layout>
   )
 }
 export default PortfolioPage
+

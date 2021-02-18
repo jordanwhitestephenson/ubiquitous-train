@@ -19,12 +19,7 @@
   .white-text {
     color: #fff !important
   }
-  a:hover, a:active {
-    color :#ff5700
-  }
-  a{
-    color :#fff !important
-  }
+
   .other-pages {
     min-height: 80vh;
   }
