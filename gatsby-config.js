@@ -1,35 +1,21 @@
 module.exports = {
-
   siteMetadata: {
-    title: "Jordan Stephenson",
-    author: "Jordan Stephenson",
-    description: "UX/UI Designer and Developer",
-    
-    siteUrl: "https://www.gatsbyjs.com/",
-    social: [
-      {
-        name: "twitter",
-        url: "https://twitter.com/gatsbyjs",
-      },
-      {
-        name: "github",
-        url: "https://github.com/jordanwhitestephenson",
-      },
-    ],
-  },
-
-  plugins: [
-    `gatsby-plugin-feed-mdx`,
-    `gatsby-plugin-netlify-cms`,
-    
-    {
-      resolve: `gatsby-plugin-material-ui`,
-      options: {
-        stylesProvider: {
-          injectFirst: true,
-        },
-      },
+    // edit below
+    title: `Gatsby Starter Personal Blog`,
+    author: `Gatsby`,
+    description: `A starter personal blog with styled components, dark mode, and Netlify CMS.`,
+    siteUrl: `https://gatsby-starter-blog-demo.netlify.com/`,
+    social: {
+      twitter: `gatsbyjs`,
     },
+  },
+  plugins: [
+    `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-transformer-sharp`,
+    `gatsby-plugin-sharp`,
+    `gatsby-plugin-offline`,
+    `gatsby-plugin-react-helmet`,
     {
       resolve: "gatsby-plugin-local-search",
       options: {
@@ -46,6 +32,7 @@ module.exports = {
               nodes {
                 id
                 fields { slug }
+                excerpt
                 rawBody
                 frontmatter {
                   title
@@ -58,16 +45,33 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title","description"],
+        store: ["id", "slug", "date", "title", "excerpt", "description"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
             slug: node.fields.slug,
             rawBody: node.rawBody,
+            excerpt: node.excerpt,
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
           })),
+      },
+    },
+    `gatsby-plugin-feed-mdx`,
+    `gatsby-plugin-root-import`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/blog`,
+        name: `blog`,
+      },
+    },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/content/assets`,
+        name: `assets`,
       },
     },
     {
@@ -100,40 +104,31 @@ module.exports = {
         plugins: [`gatsby-remark-images`],
       },
     },
-    `gatsby-plugin-react-helmet`,
     {
-      resolve: `gatsby-source-filesystem`,
+      resolve: `gatsby-plugin-google-analytics`,
       options: {
-        name: `images`,
-        path: `${__dirname}/src/images`,
+        // edit below
+        // trackingId: `ADD YOUR TRACKING ID HERE`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `blog`,
-        path: `${__dirname}/content/blog`,
-      },
-    },
-    `gatsby-transformer-sharp`,
-    `gatsby-plugin-sharp`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `jordan-stephenson`,
-        short_name: `starter`,
+        name: `Gatsby Starter Blog`,
+        short_name: `GatsbyJS`,
         start_url: `/`,
-        background_color: `#fff`,
+        background_color: `#ffffff`,
         theme_color: `#663399`,
         display: `minimal-ui`,
-        icon: `src/images/Jordan-icon.png`, // This path is relative to the root of the site.
+        // edit below
+        icon: `src/images/Jordan-icon.png`
       },
     },
-
-    
-    
-    // this (optional) plugin enables Progressive Web App + Offline functionality
-    // To learn more, visit: https://gatsby.dev/offline
-    // `gatsby-plugin-offline`,
+    {
+      resolve: `gatsby-plugin-typography`,
+      options: {
+        pathToConfigModule: `src/utils/typography`,
+      },
+    },
   ],
 }
