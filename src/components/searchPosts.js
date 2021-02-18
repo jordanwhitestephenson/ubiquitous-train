@@ -47,7 +47,6 @@ const SearchedPosts = ({ results }) =>
       const date = node.date
       const title = node.title || node.slug
       const description = node.description
-      const excerpt = node.excerpt
       const slug = node.slug
 
       return (
@@ -64,7 +63,7 @@ const SearchedPosts = ({ results }) =>
           <small>{date}</small>
           <p
             dangerouslySetInnerHTML={{
-              __html: description || excerpt,
+              __html: description 
             }}
           />
         </div>
@@ -106,7 +105,7 @@ const AllPosts = ({ posts }) => (
 const SearchPosts = ({ posts, localSearchBlog, location, navigate }) => {
   const { search } = queryString.parse(location.search)
   const [query, setQuery] = useState(search || "")
-
+console.log(localSearchBlog)
   const results = useFlexSearch(
     query,
     localSearchBlog.index,

@@ -21,7 +21,7 @@ function Bio() {
         return (
           <Container>
             <Image
-              fixed={data.avatar.childImageSharp.fixed}
+   
               alt={author}
               style={{
                 marginRight: rhythm(1 / 2),
@@ -37,9 +37,7 @@ function Bio() {
               Written by <strong>{author}</strong>, a framework built upon the
               React library.
               {` `}
-              <a href={`https://twitter.com/${social.twitter}`}>
-                Follow me on Twitter
-              </a>
+      
             </p>
           </Container>
         )

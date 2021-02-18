@@ -11,7 +11,7 @@ import About from '../pages/about'
 import Home from '../pages/home'
 import Animation from '../components/animation'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
-import netlifyIdentity from 'netlify-identity-widget'
+
 
 // Initialize the CMS object
 // CMS.init()
@@ -40,8 +40,7 @@ class IndexPage extends React.Component {
   }
 
   render() {
-    netlifyIdentity.init()
-    netlifyIdentity.on('init', user => console.log('init', user));
+console.log(this.props, 'INDEX')
     const theme = createMuiTheme({
       palette: {
         primary: {
@@ -64,7 +63,7 @@ class IndexPage extends React.Component {
         <MuiThemeProvider theme={theme}>
           <FadeIn transitionDuration="600">
             <SEO title="Home" />
-            <Layout>
+            <Layout location = {this.props.location} title = {"Jordan Stephenson Consumer Designer"}>
               <Home />
             </Layout>
           </FadeIn>

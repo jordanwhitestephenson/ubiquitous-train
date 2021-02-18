@@ -53,6 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
+  console.log(node, 'NODE CREATE?')
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {

@@ -9,15 +9,17 @@ import { rhythm, scale } from "../utils/typography"
 
 class BlogPostTemplate extends React.Component {
   render() {
+  
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
+    console.log('this.props from blog-post', post)
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO
           title={post.frontmatter.title}
-          description={post.frontmatter.description || post.excerpt}
+          description={post.frontmatter.description}
         />
         <h1>{post.frontmatter.title}</h1>
         <p
@@ -30,7 +32,7 @@ class BlogPostTemplate extends React.Component {
         >
           {post.frontmatter.date}
         </p>
-        <MDXRenderer>{post.body}</MDXRenderer>
+        {/* <MDXRenderer>{post.rawBody}</MDXRenderer> */}
         <hr
           style={{
             marginBottom: rhythm(1),
@@ -79,8 +81,8 @@ export const pageQuery = graphql`
     }
     mdx(fields: { slug: { eq: $slug } }) {
       id
-      excerpt(pruneLength: 160)
-      body
+
+      rawBody
       frontmatter {
         title
         date(formatString: "MMMM DD, YYYY")

@@ -21,6 +21,7 @@ module.exports = {
   plugins: [
     `gatsby-plugin-feed-mdx`,
     `gatsby-plugin-netlify-cms`,
+    `gatsby-plugin-root-import`,
     {
       resolve: `gatsby-plugin-material-ui`,
       options: {
@@ -45,7 +46,6 @@ module.exports = {
               nodes {
                 id
                 fields { slug }
-                excerpt
                 rawBody
                 frontmatter {
                   title
@@ -57,14 +57,13 @@ module.exports = {
           }
         `,
         ref: "id",
-        index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        index: ["title"],
+        store: ["id", "slug", "date", "title","description"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
             slug: node.fields.slug,
             rawBody: node.rawBody,
-            excerpt: node.excerpt,
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
