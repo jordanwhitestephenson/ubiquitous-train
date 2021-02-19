@@ -36,7 +36,7 @@ exports.createPages = ({ graphql, actions }) => {
     posts.forEach((post, index) => {
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-
+      console.log(post, '?!@#')
       createPage({
         path: `blog${post.node.fields.slug}`,
         component: blogPost,
@@ -53,6 +53,7 @@ exports.createPages = ({ graphql, actions }) => {
 }
 
 exports.onCreateNode = ({ node, actions, getNode }) => {
+
   const { createNodeField } = actions
 
   if (node.internal.type === `Mdx`) {

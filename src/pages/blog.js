@@ -15,7 +15,7 @@ class Blog extends React.Component {
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
-        <SEO title="Strategic Design (UX/CX) Blog" />
+        <SEO title="All posts" />
         <div>
         <Grid container style={{ height: "100%" }} container className=" padding-top-bottom-container max-width-container">
           <Grid item xs={12} md={6}>
