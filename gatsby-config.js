@@ -37,6 +37,7 @@ module.exports = {
                 frontmatter {
                   title
                   description
+                  body
                   date(formatString: "MMMM DD, YYYY")
                 }
               }
@@ -45,7 +46,7 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description"],
+        store: ["id", "slug", "date", "title", "excerpt", "description", "body"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
@@ -55,6 +56,7 @@ module.exports = {
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
+            body: node.frontmatter.body
           })),
       },
     },
@@ -124,6 +126,7 @@ module.exports = {
         icon: `src/images/Jordan-icon.png`
       },
     },
+    `gatsby-transformer-remark`,
     {
       resolve: `gatsby-plugin-typography`,
       options: {

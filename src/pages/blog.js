@@ -12,7 +12,7 @@ class Blog extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
-
+    console.log('this.props in blog.js', this.props)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
@@ -68,6 +68,7 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            body
           }
         }
       }
