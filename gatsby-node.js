@@ -1,5 +1,6 @@
 const path = require(`path`)
 const { createFilePath } = require(`gatsby-source-filesystem`)
+const { fmImagesToRelative } = require('gatsby-remark-relative-images');
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions
@@ -8,18 +9,20 @@ exports.createPages = ({ graphql, actions }) => {
   return graphql(
     `
       {
+        
         allMdx(
           sort: { fields: [frontmatter___date], order: DESC }
           limit: 1000
         ) {
           edges {
+            
             node {
               fields {
                 slug
               }
               frontmatter {
                 title
-                body
+                
               }
             }
           }
@@ -33,12 +36,12 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts pages.
     const posts = result.data.allMdx.edges
-
+    console.log(posts, 'posts** created by gatsby-node')
     posts.forEach((post, index) => {
 
       const previous = index === posts.length - 1 ? null : posts[index + 1].node
       const next = index === 0 ? null : posts[index - 1].node
-      console.log(post, '?!@#')
+      console.log(post, 'post created by gatsby-node')
       createPage({
         path: `blog${post.node.fields.slug}`,
         component: blogPost,
@@ -57,7 +60,7 @@ exports.createPages = ({ graphql, actions }) => {
 exports.onCreateNode = ({ node, actions, getNode }) => {
 
   const { createNodeField } = actions
-
+  fmImagesToRelative(node);
   if (node.internal.type === `Mdx`) {
     const value = createFilePath({ node, getNode })
     createNodeField({

@@ -1,8 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
 import { MDXRenderer } from "gatsby-plugin-mdx"
-
-import Bio from "../components/bio"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -13,7 +11,8 @@ class BlogPostTemplate extends React.Component {
     const post = this.props.data.mdx
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
-    console.log('this.props from blog-post', post)
+    console.log('this.props from blog-post', this.props)
+    
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -33,7 +32,9 @@ class BlogPostTemplate extends React.Component {
           >
             {post.frontmatter.date}
           </p>
+          <img src = {post.frontmatter.image.childImageSharp.fluid.src}/>
           <p> {post.frontmatter.description} </p>
+          
           <div>
             <ul
               style={{
@@ -73,6 +74,8 @@ class BlogPostTemplate extends React.Component {
 
 export default BlogPostTemplate
 
+
+
 export const pageQuery = graphql`
   query BlogPostBySlug($slug: String!) {
     site {
@@ -81,16 +84,41 @@ export const pageQuery = graphql`
         author
       }
     }
+    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+      html
+      
+      frontmatter {
+        date(formatString: "MMMM DD, YYYY")
+        slug
+        title
+      }
+    }
+
     mdx(fields: { slug: { eq: $slug } }) {
       id
-
-
+      rawBody
+      
       frontmatter {
+        
         title
         date(formatString: "MMMM DD, YYYY")
         description
+        
+        image {
+          childImageSharp {
+            fluid {
+              src
+            }
+          }
+        }
+        
       }
     }
-  }
+  } 
+
+
+  
 `
+
+
 

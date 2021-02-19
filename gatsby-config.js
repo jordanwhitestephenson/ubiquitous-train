@@ -14,6 +14,7 @@ module.exports = {
     `gatsby-plugin-styled-components`,
     `gatsby-transformer-sharp`,
     `gatsby-plugin-sharp`,
+    `gatsby-image`,
     `gatsby-plugin-offline`,
     `gatsby-plugin-react-helmet`,
     {
@@ -32,12 +33,12 @@ module.exports = {
               nodes {
                 id
                 fields { slug }
-                excerpt
+
                 rawBody
                 frontmatter {
+                  body
                   title
                   description
-                  body
                   date(formatString: "MMMM DD, YYYY")
                 }
               }
@@ -46,17 +47,15 @@ module.exports = {
         `,
         ref: "id",
         index: ["title", "rawBody"],
-        store: ["id", "slug", "date", "title", "excerpt", "description", "body"],
+        store: ["id", "slug", "date", "title", "description"],
         normalizer: ({ data }) =>
           data.allMdx.nodes.map(node => ({
             id: node.id,
             slug: node.fields.slug,
             rawBody: node.rawBody,
-            excerpt: node.excerpt,
             title: node.frontmatter.title,
             description: node.frontmatter.description,
             date: node.frontmatter.date,
-            body: node.frontmatter.body
           })),
       },
     },
@@ -76,6 +75,14 @@ module.exports = {
         name: `assets`,
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `markdown`,
+        path: `${__dirname}/content/mark-down`,
+      },
+    },
+    
     {
       resolve: `gatsby-plugin-mdx`,
       options: {
@@ -126,7 +133,23 @@ module.exports = {
         icon: `src/images/Jordan-icon.png`
       },
     },
-    `gatsby-transformer-remark`,
+    {
+      resolve: `gatsby-transformer-remark`,
+      options: {
+        plugins: [
+          // gatsby-remark-relative-images must go before gatsby-remark-images
+          {
+            resolve: `gatsby-remark-relative-images`,
+            options: {},
+          },
+          {
+            resolve: `gatsby-remark-images`,
+            options: { maxWidth: 1024 },
+          },
+        ],
+      },
+    }, 
+    
     {
       resolve: `gatsby-plugin-typography`,
       options: {
