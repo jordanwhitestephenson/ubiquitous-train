@@ -7,12 +7,8 @@ import GiroSport from '../images/GiroMockupMobile.png'
 import Nolly from '../images/2.png'
 import BarnStay from '../images/1.png'
 import snake from '../images/snake.png'
-
+import Button from '@material-ui/core/Button';
 const PortfolioPage = (props) => {
-  const [open, setOpen] = useState(false);
-
-
-
 
   return (
     <Layout location={props.location} title={'Portfolio'}>
