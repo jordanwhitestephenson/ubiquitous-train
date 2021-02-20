@@ -74,13 +74,6 @@ module.exports = {
         name: `assets`,
       },
     },
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        name: `markdown`,
-        path: `${__dirname}/content/mark-down`,
-      },
-    },
     
     {
       resolve: `gatsby-plugin-mdx`,
