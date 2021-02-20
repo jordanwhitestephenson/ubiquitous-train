@@ -1,14 +1,7 @@
 import React, { useState, useEffect } from "react"
-import { Link } from "gatsby"
 import Layout from '../components/layout'
 import FadeIn from 'react-fade-in';
 import SEO from "../components/seo"
-import Navigation from '../components/nav'
-import CMS from 'netlify-cms-app'
-import BlogPostPreview from '../cms/preview-templates/BlogPostPreview'
-import { Router } from "@reach/router"
-import About from '../pages/about'
-import Home from '../pages/home'
 import Animation from '../components/animation'
 import { MuiThemeProvider, createMuiTheme } from '@material-ui/core/styles';
 
@@ -27,20 +20,14 @@ class IndexPage extends React.Component {
   }
 
   componentDidMount() {
-    // console.log('YAAA?!')
-
-
     setTimeout(() => {
       this.setState({
         spinner: false
       })
     }, 3000);
-
-    // Runs after the first render() lifecycle
   }
 
   render() {
-console.log(this.props, 'INDEX')
     const theme = createMuiTheme({
       palette: {
         primary: {
@@ -54,21 +41,29 @@ console.log(this.props, 'INDEX')
       },
 
     });
-    return (
+    if (typeof window !== 'undefined') {
+      return (
 
-      this.state.spinner ?
-        <FadeIn>
-          <Animation />
-        </FadeIn> :
-        <MuiThemeProvider theme={theme}>
-          <FadeIn transitionDuration="600">
-            <SEO title="Home" />
-            <Layout location = {this.props.location} title = {"Jordan Stephenson Consumer Designer"}>
-              {/* <Home /> */}
-            </Layout>
-          </FadeIn>
-        </MuiThemeProvider>
-    )
+        this.state.spinner ?
+          <FadeIn>
+            <Animation />
+          </FadeIn> :
+          <MuiThemeProvider theme={theme}>
+            <FadeIn transitionDuration="600">
+              <SEO title="Home" />
+              <Layout location={this.props.location} title={"Jordan Stephenson Consumer Designer"}>
+              </Layout>
+            </FadeIn>
+          </MuiThemeProvider>
+      )
+    }
+    else {
+      return (
+        <h2>W</h2>
+      )
+
+    }
+
   }
 }
 

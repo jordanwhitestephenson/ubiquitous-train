@@ -36,7 +36,6 @@ module.exports = {
 
                 rawBody
                 frontmatter {
-                  body
                   title
                   description
                   date(formatString: "MMMM DD, YYYY")
