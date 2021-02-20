@@ -1,5 +1,5 @@
 import React from "react"
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 import Container from '@material-ui/core/Container';
 import Contact from '../images/Contact.png'
 import TextField from '@material-ui/core/TextField';

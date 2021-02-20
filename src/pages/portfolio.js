@@ -1,10 +1,8 @@
 import React, { useState } from "react"
-import Layout from '../components/Layout'
-import Jordan from '../images/Jordan.png'
+import Layout from '../components/layout'
 import Grid from '@material-ui/core/Grid';
 import SEO from "../components/seo"
 import { Link, graphql } from "gatsby"
-import Button from '@material-ui/core/Button';
 import GiroSport from '../images/GiroMockupMobile.png'
 import Nolly from '../images/2.png'
 import BarnStay from '../images/1.png'
