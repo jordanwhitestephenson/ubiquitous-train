@@ -13,13 +13,13 @@ import Nav from "./nav"
 import "./layout.css"
 
 const Layout = (props) => {
-
+console.log(props, 'WHEN DOES')
 
   return (
     <>
 
       <div className="wrapper">
-        {props && props.location === "Home" ?
+        {props && props.location === "Home" || props && props.location && props.location.pathname === "/" ?
           <div className="page-header section-dark">
             <Nav siteTitle={`Title`} />
             <div className="ultimate-parent-div-under-nav">

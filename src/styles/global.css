@@ -229,6 +229,9 @@
     align-items: center;
     /* margin-top: 5em; */
   }
+  .img-portfolio-padding-right-mobile {
+    padding-right: 4em;
+  }
   .mobile-padding-top {
     margin-top: 5em;
   }
@@ -447,6 +450,7 @@ color: #fff;
   width: 100%;
   display: flex;
   justify-content: center;
+  flex-wrap: wrap;
 }
 
 /* .case-studies-list .case-study:before {

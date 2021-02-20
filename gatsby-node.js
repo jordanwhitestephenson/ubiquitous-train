@@ -15,7 +15,6 @@ exports.createPages = ({ graphql, actions }) => {
           limit: 1000
         ) {
           edges {
-            
             node {
               fields {
                 slug
@@ -67,6 +66,14 @@ exports.onCreateNode = ({ node, actions, getNode }) => {
       name: `slug`,
       node,
       value,
+    })
+  }
+  if (node.internal.type === `MarkdownRemark`) {
+    const slug = createFilePath({ node, getNode, basePath: `pages` })
+    createNodeField({
+      node,
+      name: `slug`,
+      value: slug,
     })
   }
 }

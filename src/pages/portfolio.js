@@ -28,7 +28,7 @@ const PortfolioPage = (props) => {
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <img src={snake} />
+            <img src={snake}  />
           </Grid>
 
         </Grid>
@@ -50,7 +50,7 @@ const PortfolioPage = (props) => {
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={GiroSport} />
+              <img src={GiroSport} className = "img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
           <Grid container className="case-study-container wrap-reverse">
@@ -65,7 +65,7 @@ const PortfolioPage = (props) => {
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={Nolly} />
+              <img src={Nolly} className = "img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
           <Grid container className="case-study-container wrap-reverse">
@@ -80,7 +80,7 @@ const PortfolioPage = (props) => {
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={BarnStay } />
+              <img src={BarnStay } className = "img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
 

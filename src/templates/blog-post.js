@@ -22,6 +22,7 @@ class BlogPostTemplate extends React.Component {
         />
         <div>
           <h1>{post.frontmatter.title}</h1>
+          <p> {post.frontmatter.description} </p>
           <p
             style={{
               ...scale(-1 / 5),
@@ -33,7 +34,8 @@ class BlogPostTemplate extends React.Component {
             {post.frontmatter.date}
           </p>
           <img src = {post.frontmatter.image.childImageSharp.fluid.src}/>
-          <p> {post.frontmatter.description} </p>
+          <div dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html}} />
+      
           
           <div>
             <ul
@@ -84,12 +86,12 @@ export const pageQuery = graphql`
         author
       }
     }
-    markdownRemark(frontmatter: { slug: { eq: $slug } }) {
+    markdownRemark(fields: { slug: { eq: $slug } }) {
       html
       
       frontmatter {
         date(formatString: "MMMM DD, YYYY")
-        slug
+        description
         title
       }
     }
