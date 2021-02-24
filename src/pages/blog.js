@@ -12,33 +12,29 @@ class Blog extends React.Component {
     const siteTitle = data.site.siteMetadata.title
     const posts = data.allMdx.edges
     const localSearchBlog = data.localSearchBlog
-    console.log('this.props in blog.js', this.props)
     return (
       <Layout location={this.props.location} title={siteTitle}>
         <SEO title="All posts" />
         <div>
-        <Grid container style={{ height: "100%" }} container className=" padding-top-bottom-container max-width-container">
-          <Grid item xs={12} md={6}>
-            <div className="text-container">
-              <h1 className="title">My Blog</h1>
-              <p class="">My blog about Strategic Design (UX/CX) </p>
-            </div>
-          </Grid>
-          <Grid item xs={12} md={6}>
-            {/* <img src={snake} /> */}
+          <Grid container style={{ height: "100%"}} container className=" padding-top-bottom-container max-width-container">
+            <Grid item xs={12} md={12}>
+              <div className="text-container">
+                <h1 className="title">My Blog</h1>
+                <p class="">My blog about Strategic Design (UX/CX) </p>
+              </div>
+            </Grid>
+            <Grid item xs={12} md={12}>
+              <SearchPosts
+                posts={posts}
+                localSearchBlog={localSearchBlog}
+                navigate={navigate}
+                location={location}
+              />
+            </Grid>
+
           </Grid>
 
-        </Grid>
-        <SearchPosts
-          posts={posts}
-          localSearchBlog={localSearchBlog}
-          navigate={navigate}
-          location={location}
-        />
         </div>
-        <Link to="/">
-back
-        </Link>
       </Layout>
     )
   }
@@ -68,6 +64,13 @@ export const pageQuery = graphql`
             date(formatString: "MMMM DD, YYYY")
             title
             description
+            image {
+              childImageSharp {
+                fluid {
+                  src
+                }
+              }
+            }
 
    
           }
