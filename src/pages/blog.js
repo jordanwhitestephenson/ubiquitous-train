@@ -18,13 +18,13 @@ class Blog extends React.Component {
         <div>
           <Grid container style={{ height: "100%"}} container className=" padding-top-bottom-container max-width-container">
             <Grid item xs={12} md={12}>
-              <div className="text-container">
-                <h1 className="title">My Blog</h1>
-                <p class="">My blog about Strategic Design (UX/CX) </p>
+              <div className="text-container my-blog-container">
+                <h1 className="title text-center">My Blog</h1>
+                <p class="text-center">My blog about Strategic Design (UX/CX) </p>
               </div>
             </Grid>
             <Grid item xs={12} md={12}>
-              <SearchPosts
+              <SearchPosts 
                 posts={posts}
                 localSearchBlog={localSearchBlog}
                 navigate={navigate}

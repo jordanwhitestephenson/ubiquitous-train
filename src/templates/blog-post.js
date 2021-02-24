@@ -1,6 +1,6 @@
 import React from "react"
 import { Link, graphql } from "gatsby"
-import { MDXRenderer } from "gatsby-plugin-mdx"
+
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
@@ -12,7 +12,7 @@ class BlogPostTemplate extends React.Component {
     const siteTitle = this.props.data.site.siteMetadata.title
     const { previous, next } = this.props.pageContext
     console.log('this.props from blog-post', this.props)
-    
+
 
     return (
       <Layout location={this.props.location} title={siteTitle}>
@@ -20,7 +20,21 @@ class BlogPostTemplate extends React.Component {
           title={post.frontmatter.title}
           description={post.frontmatter.description}
         />
+        <div className = "parent-blog-post-container">
         <div>
+          <img className = "full-width" src={post.frontmatter.image.childImageSharp.fluid.src} />
+        </div>
+
+        <div style={{ "padding": "20px" }}>
+        <div class = "bread-crumbs">
+          <Link to = {`/`} rel = "home" style = {{"paddingLeft": "10px", "color" : "#acacac"}}>
+            Home / 
+          </Link>
+          <Link to = {`/blog`} rel = "blog" style = {{"paddingLeft": "10px", "paddingRight" : "10px", "color" : '#acacac'}}>
+                Blog / 
+          </Link>
+          {post.frontmatter.title}
+        </div>
           <h1>{post.frontmatter.title}</h1>
           <p> {post.frontmatter.description} </p>
           <p
@@ -33,10 +47,11 @@ class BlogPostTemplate extends React.Component {
           >
             {post.frontmatter.date}
           </p>
-          <img src = {post.frontmatter.image.childImageSharp.fluid.src}/>
-          <div dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html}} />
-      
-          
+
+
+          <div dangerouslySetInnerHTML={{ __html: this.props.data.markdownRemark.html }} />
+
+
           <div>
             <ul
               style={{
@@ -44,30 +59,29 @@ class BlogPostTemplate extends React.Component {
                 flexWrap: `wrap`,
                 justifyContent: `space-between`,
                 listStyle: `none`,
-                padding: 0,
+                padding: "35px",
               }}
             >
               <li>
                 {previous && (
                   <Link to={`/blog${previous.fields.slug}`} rel="prev">
-                    ← {previous.frontmatter.title}
+                    ← Previous Story :  {previous.frontmatter.title}
                   </Link>
                 )}
               </li>
               <li>
                 {next && (
                   <Link to={`/blog${next.fields.slug}`} rel="next">
-                    {next.frontmatter.title} →
+                    Next Story : {next.frontmatter.title} →
                   </Link>
                 )}
               </li>
             </ul>
           </div>
         </div>
+        </div>
 
-        {/* <MDXRenderer>{post.rawBody}</MDXRenderer> */}
-
-
+       
 
       </Layout>
     )
