@@ -46,7 +46,7 @@ const ContactPage = () => {
               <TextField type="email" name="email" id="email" id="outlined-basic" label="Email" variant="outlined" />
 
               <TextField name="message" id="message" id="outlined-basic" label="Message" variant="outlined" />
-              <Button type="submit" className="margin-top-auto" variant="contained" color="secondary">Send</Button>
+              <Button type="submit" className="margin-top-auto margin-auto" variant="contained" >Send</Button>
 
             </form>
           </div>

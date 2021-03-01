@@ -15,7 +15,7 @@ import { rhythm } from "../utils/typography"
 
 
 
-const SearchPosts = ({ posts}) => {
+const SearchPosts = ({ posts }) => {
   const useStyles = makeStyles({
     root: {
       maxWidth: 345,
@@ -28,46 +28,88 @@ const SearchPosts = ({ posts}) => {
     flex: {
       display: "flex",
       justifyContent: "center"
-      
+
     },
     padding: {
-      padding: "20px",
-      position: "relative"
+
     }
 
   });
-  const classes = useStyles();
 
+  posts = posts.slice(1)
 
   return (
-    <Grid container>
-      {posts.map(function (post) {
-        return (
+    <Grid container className="blog-square-container">
+      {posts.map(function (post, index) {
+        if (index % 2) {
+          return (
 
-          <Grid item xs={12} md = {6} className = {classes.padding}>
-                          <Link style={{ boxShadow: `none` }} to={`/blog${post.node.fields.slug}`} className= "text-center">
-            <div className={classes.flex}>
-              <img
-                className={classes.media}
-                src={post.node.frontmatter.image.childImageSharp.fluid.src}
-              />
-            </div>
+            <Grid item xs={12} md={6} className="blog-square">
+              <div className="full-width">
+                <Link style={{ boxShadow: `none` }} to={`/blog${post.node.fields.slug}`} className="text-center">
+                  {/* <div className={classes.flex}>
+                  <img
+                    className={classes.media}
+                    src={post.node.frontmatter.image.childImageSharp.fluid.src}
+                  />
+                </div> */}
 
-            <div className="blog-post-content">
-              <Typography gutterBottom variant="h5" component="h2" className= "text-center">
-                {post.node.frontmatter.title}
-              </Typography>
-              <Typography variant="body2" color="textSecondary" component="p" className = "text-center">
-                {post.node.frontmatter.description}
-              </Typography>
-            </div>
+                  <div className="blog-post-content">
+                    <div className="d-flex">
+                      <p className="blog-post-type">DESIGN</p>
+                      <p className="">5 MIN READ</p>
+                    </div>
+
+                    <Typography gutterBottom variant="h5" component="h2" className="text-align-left">
+                      {post.node.frontmatter.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p" className="text-align-left">
+                      {post.node.frontmatter.description}
+                    </Typography>
+                  </div>
+                </Link>
+              </div>
+
+              <span class="divider"></span>
+            </Grid>
 
 
-            </Link>
+          )
+        }
+        else {
+          return (
+            <Grid item xs={12} md={6} className="blog-square">
+              <div className="full-width">
+                <Link style={{ boxShadow: `none` }} to={`/blog${post.node.fields.slug}`} className="text-center">
+                  {/* <div className={classes.flex}>
+                <img
+                  className={classes.media}
+                  src={post.node.frontmatter.image.childImageSharp.fluid.src}
+                />
+              </div> */}
 
-          </Grid>
+                  <div className="blog-post-content">
+                    <div className="d-flex">
+                      <p className="blog-post-type">DESIGN</p>
+                      <p className="">5 MIN READ</p>
+                    </div>
 
-        )
+                    <Typography gutterBottom variant="h5" component="h2" className="text-align-left">
+                      {post.node.frontmatter.title}
+                    </Typography>
+                    <Typography variant="body2" color="textSecondary" component="p" className="text-align-left">
+                      {post.node.frontmatter.description}
+                    </Typography>
+                  </div>
+                </Link>
+              </div>
+
+            </Grid>
+
+          )
+        }
+
+
       })}
 
     </Grid>

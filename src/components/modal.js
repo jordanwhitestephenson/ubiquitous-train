@@ -14,7 +14,7 @@ const MyModal = (props) => {
 
   const onOpenModal = () => setOpen(true);
   const onCloseModal = () => setOpen(false);
-console.log(props)
+
   return (
     <div>
 

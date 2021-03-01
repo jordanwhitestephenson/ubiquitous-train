@@ -35,7 +35,7 @@ exports.createPages = ({ graphql, actions }) => {
 
     // Create blog posts pages.
     const posts = result.data.allMdx.edges
-    console.log(posts, 'posts** created by gatsby-node')
+
     posts.forEach((post, index) => {
 
       const previous = index === posts.length - 1 ? null : posts[index + 1].node

@@ -13,7 +13,6 @@ import Nav from "./nav"
 import "./layout.css"
 
 const Layout = (props) => {
-console.log(props, 'WHEN DOES')
 
   return (
     <>
@@ -26,8 +25,9 @@ console.log(props, 'WHEN DOES')
               <Grid container className="max-width-container mobile-padding-top" direction="row" justify="space-between" >
                 <Grid item xs={12} sm={6} >
                   <h3 className="hello_word">HELLO I'M JORDAN</h3>
-                  <h1 className="neon pink">UX/UI</h1>
-                  <h1 className="designer_word"> DESIGNER</h1>
+                  <h1 className=" designer_word">CX/CI</h1>
+                  <h3 className="hello_word">design and develop</h3>
+                  {/* <h1 className="neon pink"> DESIGNER and DEVELOEPR</h1> */}
                   <p className="jordan-para">I design & develop websites and apps that your customers will love and will help you grow — all through the lens of Customer Experience (CX).</p>
                 </Grid>
                 <Grid item xs={12} sm={6}>

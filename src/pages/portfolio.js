@@ -8,11 +8,13 @@ import Nolly from '../images/2.png'
 import BarnStay from '../images/1.png'
 import snake from '../images/snake.png'
 import Button from '@material-ui/core/Button';
+
 const PortfolioPage = (props) => {
 
   return (
     <Layout location={props.location} title={'Portfolio'}>
       <SEO title="Jordan Portfolio" />
+
       <div class="content-center" style={{ flexDirection: "column" }}>
         <Grid container style={{ height: "100%" }} container className=" padding-top-bottom-container max-width-container">
           <Grid item xs={12} md={6}>
@@ -22,11 +24,12 @@ const PortfolioPage = (props) => {
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
-            <img src={snake}  />
+            <img src={snake} />
           </Grid>
 
         </Grid>
-        <div className="case-studies max-width-container">
+        <div className="case-studies ">
+          <div className= "max-width-container">
           <div class="latest-work-container d-flex flex-column full-width">
             <h2>Latest Work</h2>
             <div class="devicer"></div>
@@ -39,12 +42,12 @@ const PortfolioPage = (props) => {
                 <h5 className="icon-box-title ">Giro Sport Design</h5>
                 <h6>UI/UX Designed and Developed</h6>
                 <p className="">Giro Sport Design is composed of an established team of ski, snowboard and bike athletes. Giro's goal was to showcase sponsered athletes in a new and exciting way. One of the main goals was to get consumers excited about the brand and the athletes that Giro sponsers.</p>
-                <Button variant="contained" color="primary" className="">See More</Button>
+                <Button variant="contained">Learn More</Button>
               </div>
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={GiroSport} className = "img-portfolio-padding-right-mobile" />
+              <img src={GiroSport} className="img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
           <Grid container className="case-study-container wrap-reverse">
@@ -54,12 +57,12 @@ const PortfolioPage = (props) => {
                 <h5 className="icon-box-title ">Nolly Consulting</h5>
                 <h6>UI/UX Designed</h6>
                 <p className="">Giro Sport Design is composed of an established team of established ski, snowboard and bike athletes. Giro's goal was to showcase sponsered athletes in a new and exciting way. One of the main goals was to get consumers excited about the brand and the athletes that Giro sponsers.</p>
-                <Button variant="contained" color="secondary" className="">See More</Button>
+                <Button variant="contained">Learn More</Button>
               </div>
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={Nolly} className = "img-portfolio-padding-right-mobile" />
+              <img src={Nolly} className="img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
           <Grid container className="case-study-container wrap-reverse">
@@ -69,15 +72,15 @@ const PortfolioPage = (props) => {
                 <h5 className="icon-box-title ">BarnStay</h5>
                 <h6>UI/UX Designed and Developed</h6>
                 <p className="">Giro Sport Design is composed of an established team of established ski, snowboard and bike athletes. Giro's goal was to showcase sponsered athletes in a new and exciting way. One of the main goals was to get consumers excited about the brand and the athletes that Giro sponsers.</p>
-                <Button variant="contained" color="secondary" className="">See More</Button>
+                <Button variant="contained">Learn More</Button>
               </div>
 
             </Grid>
             <Grid item xs={12} md={6}>
-              <img src={BarnStay } className = "img-portfolio-padding-right-mobile" />
+              <img src={BarnStay} className="img-portfolio-padding-right-mobile" />
             </Grid>
           </Grid>
-
+          </div>
         </div>
       </div>
     </Layout>
