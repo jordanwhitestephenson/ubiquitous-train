@@ -22,7 +22,7 @@ class BlogPostTemplate extends React.Component {
         />
         <div className = "parent-blog-post-container">
         <div>
-          <img className = "full-width" src={post.frontmatter.image.childImageSharp.fluid.src} />
+          <img className = "full-width contained-image" src={post.frontmatter.image.childImageSharp.fluid.src} />
         </div>
 
         <div style={{ "padding": "20px" }}>
