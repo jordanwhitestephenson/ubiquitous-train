@@ -25,10 +25,10 @@ const Layout = (props) => {
               <Grid container className="max-width-container mobile-padding-top" direction="row" justify="space-between" >
                 <Grid item xs={12} sm={6} >
                   <h3 className="hello_word">HELLO I'M JORDAN</h3>
-                  <h1 className=" designer_word">CX/CI</h1>
-                  <h3 className="hello_word">design and develop</h3>
+                  <h1 className=" designer_word">customer experience extraordinaire </h1>
+                  <h4 className="hello_word">manage / design / develop</h4>
                   {/* <h1 className="neon pink"> DESIGNER and DEVELOEPR</h1> */}
-                  <p className="jordan-para">I design & develop websites and apps that your customers will love and will help you grow — all through the lens of Customer Experience (CX).</p>
+                  {/* <p className="jordan-para">all through the lens of Customer Experience</p> */}
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <div className="homeJordanBackground" style={{

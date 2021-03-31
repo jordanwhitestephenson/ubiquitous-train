@@ -15,10 +15,9 @@ const AboutPage = () => (
         <Grid item xs={12} sm={6}>
           <div className="text-container">
             <p className="subtitle">ABOUT ME</p>
-            <h1>Consultant. Designer.
-Developer. Partner.</h1>
+            <h1>Consultant. Partner. Cat Wrangler</h1>
             <p className="">I believe my job is straightforward: make every customer touchpoint matter in the pursuit of helping people thrive and businesses succeed.
-After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web.</p>
+After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web. I love helping products succeed.</p>
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
