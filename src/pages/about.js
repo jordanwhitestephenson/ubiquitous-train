@@ -17,7 +17,7 @@ const AboutPage = () => (
             <p className="subtitle">ABOUT ME</p>
             <h1>Consultant. Partner. Cat Wrangler</h1>
             <p className="">I believe my job is straightforward: make every customer touchpoint matter in the pursuit of helping people thrive and businesses succeed. I am responsible for the ground-level details of the development process.
-After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web. I love helping products succeed.</p>
+After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web. I love helping products succeed. I excell at a role that requires business acumen, a deep understanding of UX design and product knowledge.</p>
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>

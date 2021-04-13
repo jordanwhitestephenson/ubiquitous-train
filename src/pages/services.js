@@ -27,7 +27,7 @@ const ServicesPage = () => {
           <Grid item xs={12} md={6}>
             <div className="text-container">
               <h1 className="title">Services</h1>
-              <p class="">making sure your digital product usability helps to meet your business objectives  </p>
+              <p class="">Professional focal points include coding, in-house and remote team management, application design, analytical tools, roadmap administration and project management. </p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
@@ -38,7 +38,7 @@ const ServicesPage = () => {
         <div className="case-studies">
           <div className="max-width-container">
             <div class="latest-work-container d-flex flex-column full-width">
-              <h2>Specializing in design, tech, and CX audits.</h2>
+              <h2>I am driven by curiosity. I love absorbing new knowledge and juxtaposing it with my existing understandings</h2>
               <div class="devicer"></div>
             </div>
 
