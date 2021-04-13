@@ -16,7 +16,7 @@ const AboutPage = () => (
           <div className="text-container">
             <p className="subtitle">ABOUT ME</p>
             <h1>Consultant. Partner. Cat Wrangler</h1>
-            <p className="">I believe my job is straightforward: make every customer touchpoint matter in the pursuit of helping people thrive and businesses succeed.
+            <p className="">I believe my job is straightforward: make every customer touchpoint matter in the pursuit of helping people thrive and businesses succeed. I am responsible for the ground-level details of the development process.
 After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web. I love helping products succeed.</p>
           </div>
         </Grid>
@@ -82,6 +82,10 @@ After 5 years as a software developer,  I understand both the visual and functio
                     <h5 className="icon-box-title">2.) Define</h5>
                     <p className="">(construct a POV that is based on user needs and insights) by defining the problem we can understand what features, functions or elements we can use to help the users solve it.</p>
                   </div>
+                  <div>
+                    <h5 className="icon-box-title">3.) Communication</h5>
+                    <p className="">Communication skills leap to the top of the list when considering what it takes to be a successful product manager. So many aspects of the job rely on prowess in this domain. </p>
+                  </div>
                 </div>
               </Grid>
               <Grid item xs={12} sm={6} className="d-flex align-items-start">
@@ -93,7 +97,7 @@ After 5 years as a software developer,  I understand both the visual and functio
                 {/* <p className="white-text">Whether it’s a small change or a complete overhaul of your website, store, or app, I bring a customer-centric mindset to every project.</p> */}
                 <div className="icon-container">
                   <div className="design-icon-container" >
-
+                  I started this role because it has evolved out of a set of responsibilities that traditionally fell to lead developers and engineers: scoping out user problems and making critical product decisions.
                     <div>
                       <h5 className="icon-box-title">3.) Ideate</h5>
                       <p className="">(generating ideas) by way of brainstorming, rapid prototyping, sketching, design studio, and low-fidelity wireframes, we can start ideating some solutions and even begin testing the concepts with users to start iterating the concepts. We want to be free thinking in this stage and expand the problem space.</p>
