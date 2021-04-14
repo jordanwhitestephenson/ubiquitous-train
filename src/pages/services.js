@@ -53,8 +53,8 @@ const ServicesPage = () => {
               </Grid>
               <Grid item xs={12} md={4}>
                 <div class="text-block-padding">
-                  <h5 className="icon-box-title ">Audits</h5>
-                  <p className="">Have an existing experience? I help identify friction points customers face and make insightful recommendations for improvement.</p>
+                  <h5 className="icon-box-title ">Customer</h5>
+                  <p className="">I am bsessed with understanding target customers and I do whatever it takes to get to know them</p>
                 </div>
               </Grid>
               <Grid item xs={12} md={4}>
