@@ -15,9 +15,10 @@ const AboutPage = () => (
         <Grid item xs={12} sm={6}>
           <div className="text-container">
             <p className="subtitle">ABOUT ME</p>
-            <h1>Consultant. Partner. Cat Wrangler</h1>
-            <p className="">I believe my job is straightforward: make every customer touchpoint matter in the pursuit of helping people thrive and businesses succeed. I am responsible for the ground-level details of the development process.
-After 5 years as a software developer,  I understand both the visual and functional aspects of creating for the web. I love helping products succeed. I excell at a role that requires business acumen, a deep understanding of UX design and product knowledge.</p>
+            <h1>Detail‑Oriented, Tech‑Savvy, & Analytically Focused</h1>
+            <p className="">
+            I thrive when breaking down complex technical problems, prioritizing for MVP, and then helping to communicate a resolution from stakeholders to developers and back again so that everyone is on the same page and has clear expectations.
+          </p>
           </div>
         </Grid>
         <Grid item xs={12} sm={6}>
@@ -28,38 +29,27 @@ After 5 years as a software developer,  I understand both the visual and functio
         <div className="">
           <Grid container className="black-container">
             <Grid className="pink-container  flex-wrap padding-top-bottom-container margin-auto d-flex">
-              <Grid item xs={12} sm={4} className="d-flex align-items-start">
+              <Grid item xs={12} sm={6} className="d-flex align-items-start">
                 <div class="text-container">
                   <h2 className="white-text" style={{ marginTop: 0 }}>My Approach</h2>
                   <p className="subtitle white-text" style={{ paddingBottom: "20px" }} >I bring a customer-centric approach to every project.</p>
                   <img src={donut} />
                 </div>
               </Grid>
-              <Grid item xs={12} sm={8} className="d-flex align-items-center padding-left-desktop-grid">
+              <Grid item xs={12} sm={6} className="d-flex align-items-center padding-left-desktop-grid">
                 <div className="text-container">
                   {/* <p className="white-text">Whether it’s a small change or a complete overhaul of your website, store, or app, I bring a customer-centric mindset to every project.</p> */}
                   <div className="icon-container">
                     <Grid container className="design-icon-container" spacing={6}>
-                      <Grid item xs={12} sm={6}>
-                        <FontAwesomeIcon icon={faTape} className="white-text" />
-                        <h5 className="icon-box-title white-text">Design That Really Matters</h5>
-                        <p className="white-text">Every customer touchpoint matters. Whether it's messaging, a simple click, or a multi-step process — it's important we consider every interaction our customers have.</p>
+                      <Grid item xs={12} >
+
+                        <p className="white-text">At the end of the day, my goal is to view the product and its features from the eyes of the user and to create an optimized experience that eases pain points and brings joy. <br /><br />
+
+                        As a former Web Engineer turned Product Manager, I understand what it means to build products that are high-quality, cohesive, and scalable. I have built awareness for the small details, which is helpful for working through requirements, visualizations, models, and prototypes with cross-functional team members. I feel at ease working with data scientists, engineers, creatives & other business-oriented individuals. I can appropriately approach problem-solving and actively maintain a holistic viewpoint through various phases.<br /><br />
+
+                        I have multiple years of experience in a wide range of disciplines including entrepreneurship, engineering, data, analytics, internet marketing, conversion optimization, and UX. These experiences have given me unique insights into the product lifecycle and has allowed me to think through the entire customer journey while challenging our own assumptions.</p>
                       </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <FontAwesomeIcon icon={faDatabase} className="white-text" />
-                        <h5 className="icon-box-title white-text">Modern Tech That Scales</h5>
-                        <p className="white-text">I believe it's critical to lay a technology foundation that won't just get you where you need to go, but will scale with you as you grow — making your life easier, not harder. </p>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <FontAwesomeIcon icon={faCompass} className="white-text" />
-                        <h5 className="icon-box-title white-text">Data-Driven Decisions</h5>
-                        <p className="white-text">My approach is to intimately understand how your customers engage using analytics and data — it's one of the most important aspects of crafting a great CX. </p>
-                      </Grid>
-                      <Grid item xs={12} sm={6}>
-                        <FontAwesomeIcon icon={faChartLine} className="white-text" />
-                        <h5 className="icon-box-title white-text">Driving Results For Growth</h5>
-                        <p className="white-text">I prefer to start with the end in mind. Asking, ``What are we trying to achieve and how will we get there?``. From there, every calculated decision is made towards helping you grow.</p>
-                      </Grid>
+
                     </Grid>
                   </div>
                 </div>
@@ -68,53 +58,24 @@ After 5 years as a software developer,  I understand both the visual and functio
           </Grid>
 
           <div container className="gray-container">
-        
-            <Grid container spacing={2}class=" pink-container flex-wrap margin-auto d-flex">
+
+            <Grid container spacing={2} class=" pink-container flex-wrap margin-auto d-flex">
               <Grid item xs={12} sm={6} className="d-flex align-items-center">
                 <div class="text-container">
-                  <h2 className="" style={{ marginTop: 0 }}>My Process</h2>
+                  <h2 className="" style={{ marginTop: 0 }}>Noteworthy Skills</h2>
                   <p className="subtitle" style={{ paddingBottom: "20px" }} ></p>
                   <div>
-                    <h5 className="icon-box-title">1.) Empathize</h5>
-                    <p className="">(learn about the audience for whom I am designing). Using contextual inquiry, surveying, advanced UX research and competitive analysis, I can gain a variety of user insights that can be used to mold personas, storyboards, and journey maps. These all help inform the business who and why we are designing for.</p>
+                    <p className="">
+Google Analytics, SQL, MongoDB, PostgreSQL, MySQL, Microsoft Office Suite, Google Docs Suite, Slack, Intercom, Jira,Trello, SalesForce Commerce Cloud, HotJar,  Google Tag Manager, Git, JSON, RESTful API, Adobe Creative Suite, Sketch, Figma, HTML, CSS, Javascript, React.js, Scrum Methodologies.</p>
                   </div>
-                  <div>
-                    <h5 className="icon-box-title">2.) Define</h5>
-                    <p className="">(construct a POV that is based on user needs and insights) by defining the problem we can understand what features, functions or elements we can use to help the users solve it.</p>
-                  </div>
-                  <div>
-                    <h5 className="icon-box-title">3.) Communication</h5>
-                    <p className="">Communication skills leap to the top of the list when considering what it takes to be a successful product manager. So many aspects of the job rely on prowess in this domain. </p>
-                  </div>
+
                 </div>
               </Grid>
               <Grid item xs={12} sm={6} className="d-flex align-items-start">
-                <img className = "img-square-about" src={hat} />
+                <img className="img-square-about" src={hat} />
               </Grid>
             </Grid>
-            <div className="d-flex align-items-center">
-              <div className="text-container pink-container">
-                {/* <p className="white-text">Whether it’s a small change or a complete overhaul of your website, store, or app, I bring a customer-centric mindset to every project.</p> */}
-                <div className="icon-container">
-                  <div className="design-icon-container" >
-                  I started this role because it has evolved out of a set of responsibilities that traditionally fell to lead developers and engineers: scoping out user problems and making critical product decisions.
-                    <div>
-                      <h5 className="icon-box-title">3.) Ideate</h5>
-                      <p className="">(generating ideas) by way of brainstorming, rapid prototyping, sketching, design studio, and low-fidelity wireframes, we can start ideating some solutions and even begin testing the concepts with users to start iterating the concepts. We want to be free thinking in this stage and expand the problem space.</p>
-                    </div>
-                    <div>
-                      <h5 className="icon-box-title">4.) Prototype</h5>
-                      <p className="">(experiment). In addition to designing the high-fidelity prototype, I will create an Invision prototype (or in some cases a paper prototype, as mentioned before) to use internally or with the testing panel to continue to inform us about the perspective of the end user.</p>
-                    </div>
-                    <div>
-                      <h5 className="icon-box-title ">5.) Test</h5>
-                      <p className="">(final stage). This is probably the best part of the process, by actually testing the clickable high-fidelity app/web prototype formally I can dig deeper into the product and the user's goals. In some cases, the problem may be redefined, and in many cases, we will iterate the design once more. In my most expansive projects, we can go through 3-4 rounds of testing.</p>
-                    </div>
 
-                  </div>
-                </div>
-              </div>
-            </div>
 
 
           </div>

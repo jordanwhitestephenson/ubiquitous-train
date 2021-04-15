@@ -31,7 +31,7 @@ const Navigation = (props) => {
                         {/* <a href="/about">ABOUT</a> */}
                     </div>
                     <div className="option" onClick={closeMobileMenu}>
-                        <a href="/services">SERVICES</a>
+                        <a href="/services">RESUME</a>
                     </div>
                     <div className="option" onClick={closeMobileMenu}>
                         <a href="/portfolio">PORTFOLIO</a>

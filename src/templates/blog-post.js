@@ -4,6 +4,7 @@ import { Link, graphql } from "gatsby"
 import Layout from "../components/layout"
 import SEO from "../components/seo"
 import { rhythm, scale } from "../utils/typography"
+import BlogImage from '../images/123123.png'
 
 class BlogPostTemplate extends React.Component {
   render() {
@@ -22,7 +23,7 @@ class BlogPostTemplate extends React.Component {
         />
         <div className = "parent-blog-post-container">
         <div>
-          <img className = "full-width contained-image" src={post.frontmatter.image.childImageSharp.fluid.src} />
+          <img className = "full-width contained-image" src={post.frontmatter.image.childImageSharp ? post.frontmatter.image.childImageSharp.fluid.src : BlogImage } />
         </div>
 
         <div style={{ "padding": "20px" }}>

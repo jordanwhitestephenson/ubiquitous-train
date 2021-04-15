@@ -41,6 +41,7 @@ class IndexPage extends React.Component {
       },
 
     });
+  
     if (typeof window !== 'undefined') {
       return (
 
@@ -59,7 +60,7 @@ class IndexPage extends React.Component {
     }
     else {
       return (
-        <h2>W</h2>
+        <h2></h2>
       )
 
     }

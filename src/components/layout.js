@@ -48,7 +48,7 @@ const Layout = (props) => {
             <footer style={{
               marginTop: `2rem`
             }}>
-              Technical Project Management - UX Design - UI Develop
+              Technical Project Management - UX Design - Web Developer
     
             </footer>
           </div>

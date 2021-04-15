@@ -20,7 +20,7 @@ const PortfolioPage = (props) => {
           <Grid item xs={12} md={6}>
             <div className="text-container">
               <h1 className="title">Portfolio</h1>
-              <p class="">Since the start of my career, I have contributed to product/project delivery, customer success, and internal strategy teams, utilizing my knack for operationalizing ideas and tackling challenges given to me. At my best, I am a thoughtful, collaborative leader and passionate learner. I use my well-rounded perspective to find creative and purposeful solutions for the tough problems. I am an authentic community builder who works with intention for the greater good.  </p>
+              <p class=""> At my best, I am a thoughtful, collaborative leader and passionate learner. I use my well-rounded perspective to find creative and purposeful solutions for the tough problems. I am an authentic community builder who works with intention for the greater good.  </p>
             </div>
           </Grid>
           <Grid item xs={12} md={6}>
