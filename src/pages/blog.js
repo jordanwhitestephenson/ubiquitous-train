@@ -25,7 +25,7 @@ class Blog extends React.Component {
             <Grid item xs={12} md={12} className = "d-flex blog-background flex-wrap" 
             >
               <Grid item xs={12} md={6} className = "d-flex justify-content-center image-container">
-                <img className = "square-image" alt = {posts[0].node.frontmatter.title} src = {posts[0].node.frontmatter.image.childImageSharp ? posts[0].node.frontmatter.image.childImageSharp.fluid.src : BlogImage} />
+                <img className = "square-image" alt = {posts[0].node.frontmatter.title} src = {posts[0].node.frontmatter.image && posts[0].node.frontmatter.image.childImageSharp ? posts[0].node.frontmatter.image.childImageSharp.fluid.src : BlogImage} />
               </Grid>
               <Grid item xs={12} md={6} className = "d-flex justify-content-center flex-column padding-50">
                 <h1 className="white-text">{posts[0].node.frontmatter.title}</h1>
